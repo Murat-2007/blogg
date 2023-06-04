@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    
+    <div class="jumbotron text-center">
+        <h3>Yazılım Doküman Arşivi Bloğuma Hoşgeldiniz</h3>
+        <p>
+            Bu blogta çeşitli yazılım dilleri hakkında dokümanlar paylaşıyorum. 
+            Siz de yazılım geliştiriciler olarak blog yazılarınızı paylaşabilirsiniz ve insanlara yardımcı olabilirsiniz.
+        </p>
+    </div>
+    <p>
+        {% if request.user.is_authenticated %}
+            Giriş Yapılmiş, {{request.user.username}}
+        {% else %}
+            Giris Yapılmamış
+
+        {% endif %}
+    </p>
+    
+{% endblock body %}
